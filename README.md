@@ -65,7 +65,7 @@ Control	              JUMP_C, JUMP_Z
 
 **📁 Project Structure**
 ├── source_codes/        # RTL source files (Verilog)
-├── testbenches/         # SystemVerilog testbenches
+├── testbenches/         # Verilog testbenches
 ├── png_diagrams/       # Architecture diagrams and report
 ├── test_outputs/    # Simulation results (waveforms/images)
 └── README.md
