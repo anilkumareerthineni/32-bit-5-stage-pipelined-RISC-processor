@@ -572,9 +572,16 @@ RISC-V/
 │  ├─ data_hazard_control.v
 │  └─ control_hazard_sol.v
 │
-├─ tb/
+├─ testbench/
 │  └─ tb_pipelined_processor.sv
 │
+├─ test_outputs/
+│  └─ simulation logs
+│
+├─ waveforms/
+│  └─ waveform screenshots for key verification tests
+│
+├─ Schematic.png
 └─ README.md
 ```
 
