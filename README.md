@@ -142,7 +142,7 @@ This view shows the major blocks of the processor and their interconnections:
 
 
 ```md
-![Top Level Schematic]Schematic.png
+![Top Level Schematic](Schematic.png)
 ```
 
 
