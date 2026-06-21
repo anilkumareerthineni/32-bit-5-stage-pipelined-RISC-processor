@@ -3,7 +3,7 @@
 ## Overview
 
 This project implements a **custom 32-bit 5-stage pipelined processor** in **Verilog HDL**.
-The processor supports a small custom instruction set for:
+The processor supports a compact custom instruction set for:
 
 * ALU operations
 * Immediate-to-register operations
@@ -25,8 +25,8 @@ The processor also includes:
 
 * **data forwarding / hazard handling**
 * **basic control hazard handling for branches**
-* **self-checking SystemVerilog testbench**
-* waveform-based verification for important scenarios such as ALU writeback, store/load, store forwarding, and branching
+* a **self-checking SystemVerilog testbench**
+* **waveform-based verification** for important scenarios such as ALU writeback, store/load, store forwarding, and branching
 
 ---
 
@@ -120,6 +120,46 @@ The design is split into the following RTL modules:
 * `writeback_stage.v` – final result selection for register writeback
 * `data_hazard_control.v` – forwarding control logic
 * `control_hazard_sol.v` – branch decision / PC redirection logic
+
+---
+
+# Architecture / Schematic
+
+The project was also viewed in **Vivado RTL / elaborated schematic view** to visualize the overall processor architecture and the pipeline datapath.
+
+## Top-level processor schematic
+
+This view shows the major blocks of the processor and their interconnections:
+
+* `fetch1`
+* `decode1`
+* `ex1`
+* `memst1`
+* `wrb1`
+* `hazard_control1`
+* `control_hazard1`
+
+> Add your top-level schematic screenshot here:
+
+```md
+![Top-Level Schematic](docs/top_level_schematic.png)
+```
+
+## Pipeline datapath schematic
+
+A second schematic screenshot can be used to focus on the core datapath:
+
+* Fetch → Decode → Execute → Memory → Writeback
+* Inter-stage signal flow
+* Hazard/forwarding integration with the datapath
+
+> Add your pipeline datapath schematic screenshot here:
+
+```md
+![Pipeline Datapath Schematic](docs/pipeline_datapath_schematic.png)
+```
+
+> **Note:** The schematic images used in this project are from Vivado’s **elaborated / RTL schematic view**. For documentation purposes, this view is often clearer than the synthesized netlist view because it preserves module hierarchy and is easier to understand.
 
 ---
 
@@ -389,7 +429,9 @@ Verifies correct behavior when the same register is used as both source operands
 
 # Waveform Verification
 
-Waveforms were captured for key scenarios to verify datapath behavior and hazard handling, including:
+Waveforms were captured for key scenarios to verify datapath behavior and hazard handling.
+
+## Waveforms captured
 
 * **ADD + Writeback**
 * **Store then Load**
@@ -406,6 +448,39 @@ These waveforms demonstrate:
 * memory store / load path
 * forwarding behavior
 * branch redirection
+
+## Example waveform images
+
+Add your screenshots like this:
+
+```md
+## ADD + Writeback
+![ADD + WB](waveforms/add_writeback_waveform.png)
+
+## Store then Load
+![Store then Load](waveforms/store_load_waveform.png)
+
+## Store Forwarding
+![Store Forwarding](waveforms/store_forwarding_waveform.png)
+
+## Branch Zero
+![Branch Zero](waveforms/branch_zero_waveform.png)
+
+## Back-to-Back ALU Chain
+![Back-to-Back ALU Chain](waveforms/back_to_back_alu_chain.png)
+```
+
+---
+
+# Simulation Output
+
+The processor was verified using the self-checking testbench, and the final simulation output showed successful execution of the implemented tests.
+
+Add the final console result screenshot here:
+
+```md
+![All Tests Passed](outputs/all_tests_passed.png)
+```
 
 ---
 
@@ -442,6 +517,10 @@ RISC-V/
 ├─ outputs/
 │  └─ all_tests_passed.png
 │
+├─ docs/
+│  ├─ top_level_schematic.png
+│  └─ pipeline_datapath_schematic.png
+│
 └─ README.md
 ```
 
@@ -457,8 +536,9 @@ The design was simulated in **Vivado / XSim**.
 2. Add `tb/tb_pipelined_processor.sv` as simulation source
 3. Launch behavioral simulation
 4. Run the testbench
-5. Observe PASS/FAIL results in the console
+5. Observe PASS / FAIL results in the console
 6. Inspect waveform screenshots for key scenarios
+7. Open the Vivado elaborated schematic if you want a visual view of the architecture
 
 ---
 
