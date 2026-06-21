@@ -139,10 +139,10 @@ This view shows the major blocks of the processor and their interconnections:
 * `hazard_control1`
 * `control_hazard1`
 
-> Add your top-level schematic screenshot here:
+
 
 ```md
-![Top-Level Schematic](Schematic.png)
+Schematic.png
 ```
 
 
