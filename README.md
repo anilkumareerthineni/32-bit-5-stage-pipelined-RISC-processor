@@ -449,27 +449,6 @@ These waveforms demonstrate:
 * forwarding behavior
 * branch redirection
 
-## Example waveform images
-
-Add your screenshots like this:
-
-```md
-## ADD + Writeback
-![ADD + WB](waveforms/add_writeback_waveform.png)
-
-## Store then Load
-![Store then Load](waveforms/store_load_waveform.png)
-
-## Store Forwarding
-![Store Forwarding](waveforms/store_forwarding_waveform.png)
-
-## Branch Zero
-![Branch Zero](waveforms/branch_zero_waveform.png)
-
-## Back-to-Back ALU Chain
-![Back-to-Back ALU Chain](waveforms/back_to_back_alu_chain.png)
-```
-
 ---
 
 # Simulation Output
