@@ -145,19 +145,6 @@ This view shows the major blocks of the processor and their interconnections:
 ![Top-Level Schematic](docs/top_level_schematic.png)
 ```
 
-## Pipeline datapath schematic
-
-A second schematic screenshot can be used to focus on the core datapath:
-
-* Fetch → Decode → Execute → Memory → Writeback
-* Inter-stage signal flow
-* Hazard/forwarding integration with the datapath
-
-> Add your pipeline datapath schematic screenshot here:
-
-```md
-![Pipeline Datapath Schematic](docs/pipeline_datapath_schematic.png)
-```
 
 > **Note:** The schematic images used in this project are from Vivado’s **elaborated / RTL schematic view**. For documentation purposes, this view is often clearer than the synthesized netlist view because it preserves module hierarchy and is easier to understand.
 
